@@ -77,7 +77,6 @@ def ensure_chain():
     retriever = _vectorstore.as_retriever(search_kwargs={"k": 6})
     retriever.search_type = "mmr"
 
-    # LLM: ลด temperature เพื่อลดความ "เดา"
     llm = ChatOllama(model=OLLAMA_CHAT_MODEL, temperature=0.2)
 
     _qa = RetrievalQA.from_chain_type(
